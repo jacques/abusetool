@@ -1,6 +1,7 @@
 {
   "name": "abusetool",
   "version": "0.0.1",
+  "author": "Jacques Marneweck <jacques@powertrip.co.za> (http://www.powertrip.co.za/)",
   "private": true,
   "scripts": {
     "start": "node app.js"
