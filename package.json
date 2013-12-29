@@ -14,6 +14,7 @@
     "sigyan": "~0.2.0",
     "bookshelf": "0.6.2",
     "mysql": "*",
-    "sqlite3": "*"
+    "sqlite3": "*",
+    "node-whois": "*"
   }
 }
