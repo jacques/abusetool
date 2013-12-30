@@ -1,0 +1,8 @@
+{
+  "db": {
+    "driver": "mysql",
+    "hostname": "localhost",
+    "username": "abusetool",
+    "password": "abusetool"
+  }
+}
