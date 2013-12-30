@@ -18,6 +18,8 @@ var LOG = mod_bunyan.createLogger({
   level: 'info'
 });
 
+mod_assert.ok(process.env.COOKIE_SECRET_KEY, 'env.COOKIE_SECRET_KEY');
+
 var app = express();
 
 app.set('logger', LOG);
@@ -43,7 +45,7 @@ app.use(function(req, res, next) {
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
+app.use(express.cookieParser(process.env.COOKIE_SECRET_KEY));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
