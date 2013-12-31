@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+/*
+ * Copyright (c) 2013 Jacques Marneweck.  All rights reserved.
+ *
+ * Imports a remote file which contains a list of active ASN's and who the ASN
+ * belongs for use with figuring out who is announcing a netblock using BGP.
+ */
+
+/**
+ * This is a work in progress - need to get the parsing working correctly.
+ */
+
+var common = require ('../lib/common');
+var mod_assert = require('assert');
+var mod_http = require ('http');
+
+var lines = '';
+var reasn = new RegExp(/^\s*(\d+)\s+(.*)$/g);
+
+var request = mod_http.request({
+  host: 'thyme.apnic.net',
+  path: '/rviews/data-used-autnums'
+}, function(res) {
+    res.setEncoding('utf8');
+    res.on('data', function(data) {
+      if (data) {
+        mod_assert.ok (data, 'data');
+        lines += data;
+      }
+    });
+    return res.on('end', function() {
+      res.body = lines;
+      lines = lines.toString().split("\n");
+      var m;
+      for (i in lines) {
+        console.log(lines[i]);
+        m = lines[i].toString().match(reasn);
+        m.toString().split(" ", 1);
+        console.log(m);
+      }
+    });
+  }).end();
