@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2013 Jacques Marneweck.  All rights reserved.
+ *
+ * Abuse tool
+ */
 
 /**
  * Module dependencies.
@@ -9,7 +14,7 @@ var mod_bunyan = require('bunyan');
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
-var http = require('http');
+var mod_http = require('http');
 var path = require('path');
 
 var LOG = mod_bunyan.createLogger({
@@ -59,6 +64,6 @@ app.get('/', routes.index);
 app.get('/whois/:ip', routes.whois);
 app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
+mod_http.createServer(app).listen(app.get('port'), function(){
   LOG.info('Express server listening on port ' + app.get('port'));
 });
