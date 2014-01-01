@@ -7,6 +7,13 @@ sources to provide data via API calls (a seperate restify app is in development)
 so that CIDR ranges can be blocked using by various chef cookbooks (i.e. Spammers
 and compromised hosts can be blocked from sending SPAM or connecting to apache).
 
+TODO
+----
+
+ - [ ] - Track abuse by IP and link back to CIDR block
+ - [ ] - Link CIDR's to the ASN announcing the netblock
+ - [ ] - Provide a report showing IP's where abuse is originating from
+
 Authors
 -------
 
