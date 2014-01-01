@@ -13,6 +13,10 @@ TODO
  - [ ] - Track abuse by IP and link back to CIDR block
  - [ ] - Link CIDR's to the ASN announcing the netblock
  - [ ] - Provide a report showing IP's where abuse is originating from
+ - [ ] - Write an importer to import ASN details
+ - [ ] - Link to HE's BGP pages for more information
+ - [ ] - Cache WHOIS lookups
+ - [ ] - Parse incoming emails for WordPress dictionary attacks
 
 Authors
 -------
