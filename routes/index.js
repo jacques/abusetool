@@ -8,6 +8,13 @@ exports.index = function(req, res){
 };
 
 /*
+ * GET reports page.
+ */
+exports.reports = function(req, res){
+  res.render('reports', { title: 'Reports' });
+};
+
+/*
  * GET whois page.
  */
 exports.whois = function(req, res){

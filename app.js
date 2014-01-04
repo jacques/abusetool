@@ -66,6 +66,7 @@ if ('development' === app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/reports', routes.reports);
 app.get('/whois/:ip', routes.whois);
 app.get('/users', user.list);
 
