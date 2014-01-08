@@ -4,5 +4,12 @@
     "hostname": "localhost",
     "username": "abusetool",
     "password": "abusetool"
+  },
+  "mailboxes": {
+    "wphacks": {
+      "hostname": "mail.example.com",
+      "username": "username@example.com",
+      "password": "example"
+    }
   }
 }
